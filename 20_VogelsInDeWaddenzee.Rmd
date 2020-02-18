@@ -1,0 +1,51 @@
+
+# Vogels in de Waddenzee
+
+
+```{r, message=FALSE, warning=FALSE, include=FALSE}
+# set chunk options for this Rmd file
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE,
+	cache = TRUE
+)
+
+require(sf)
+require(tidyverse)
+
+```
+
+
+```{r inlezenBroedvogeldata, include = FALSE, cache=T}
+
+baseurl = "https://wad.deontwikkelfabriek.nl/geoserver/sovon/ows?"
+wfs_request = "service=WFS&version=1.0.0&request=GetFeature&typeName=sovon:koloniebroedvogels"
+koloniebroedvogels <- st_read(paste0(baseurl, wfs_request), crs = 4326) %>% st_transform(28992)
+land <- read_sf("d:/GIS_DATA/Nederland/administratief/Gemeentegrenzen_2017_zonder_water_gen.shp") %>% st_transform(28992) %>%
+  summarise()
+```
+
+*De data op deze pagina zijn afkomstig van SOVON. Ze worden ontsloten via een Geoserver [Link naar Geoserver](https://wad.deontwikkelfabriek.nl/geoserver/) laag "sovon:koloniebroedvogels") . De data voor de figuren op deze pagina zijn op `r Sys.Date()` gedownload van deze Geoserver. *
+
+
+Tellingen van koloniebroedvogels in de Waddenzee zijn onderdeel van het Meetnet Broedvogels van Sovon Vogelonderzoek Nederland (Netwerk Ecologische Monitoring) en het trilaterale TMAP-programma dat samen met Duitsland en Denemarken wordt uitgevoerd. De kwaliteitsborging is in handen van het Centraal Bureau voor de Statistiek (CBS). Belangrijke wettelijke kaders en verdragen zijn de EU-Vogelrichtlijn, de Kaderrichtlijn Marien, het OSPAR verdrag en het trilaterale Waddenzeeplan. Sinds 1990 worden jaarlijks alle soorten kustbroedvogels geteld die in kolonies broeden, denk aan Lepelaar, Aalscholver, Kluut, meeuwen en sterns. Deze tellingen streven een volledige dekking van de Waddenzee na. Ze vinden plaats volgens een gestandaardiseerde methodiek. De uitvoering van het veldwerk ligt bij vrijwilligers, medewerkers van terreinbeherende instanties en vogelwachters, eventuele geassisteerd door professionele veldmedewerkers van Sovon en logistiek ondersteund door de Waddenunit.
+
+
+```{r aantallenVogels, fig.height=2.5, fig.width=7, out.width="100%", fig.fullwidth = TRUE, fig.cap="Totaal aantal koloniebroedvogels (som van individuen in alle getelde kolonies) in het Waddengebied. De grootte van de punten representeert de gemiddelde koloniegrootte in dat jaar."}
+
+koloniebroedvogels %>% group_by(jaar, soort) %>%
+  summarise(sum = sum(n), meanColonySize = mean(n)) %>%
+  ggplot(aes(jaar, sum)) +
+  geom_line() +
+  geom_point(aes(size = meanColonySize), shape = 21, fill = "white") + 
+  facet_grid(. ~ soort, scales = "free") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+Wat laat de grafiek zien
+Het aantal broedparen per jaar voor de hele Waddenzee. Het is een optelsom van de getelde en bijgeschatte aantallen (indien kolonies een keer niet zijn geteld).
+
+
+De meeste trekvogelsoorten die niet in het waddengebied broeden, gaat het goed. Een sinds 1980 gemiddeld stijgende lijn in aantallen lijkt stabiel te worden. De broedvogels doen het minder goed, volgens gegevens uit het reproductiemeetnet Waddenzee. Het komt vaker voor dat hoge waterstanden bij zomerstormen legsels wegspoelen. Andere negatieve invloeden kunnen zijn: bedreiging door roofdieren (vooral op het vasteland) en gebrek aan voedsel (bijvoorbeeld door afwezigheid of onbereikbaarheid van jonge vis).

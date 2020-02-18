@@ -1,0 +1,8 @@
+"0","# then restart R and Rstudio (you may have to close all instances of R/Rstudio)
+# check if path is correct:
+tinytex::tinytex_root() 
+"
+"1","[1]"
+"1"," ""C:\\Users\\stolte\\AppData\\Roaming\\TinyTeX"""
+"1","
+"

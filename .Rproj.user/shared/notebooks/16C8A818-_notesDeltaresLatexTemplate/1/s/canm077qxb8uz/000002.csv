@@ -1,0 +1,466 @@
+"0","tinytex::install_tinytex()
+"
+"1","tlmgr revision 53568 (2020-01-27 19:20:16 +0100)
+"
+"1","tlmgr using installation: C:/Users/stolte/AppData/Roaming/TinyTeX
+"
+"1","TeX Live (http://tug.org/texlive) version 2019
+"
+"2","Detected an existing tlmgr at C:\Users\stolte\AppData\Roaming\TinyTeX\bin\win32\tlmgr.bat. It seems TeX Live has been installed (check tinytex::tinytex_root()). You are recommended to uninstall it, although TinyTeX should work well alongside another LaTeX distribution if a LaTeX document is compiled through tinytex::latexmk()."
+"2","trying URL 'http://mirror.ctan.org/systems/texlive/tlnet/install-tl.zip'
+"
+"2","Content length 331 bytes
+"
+"2","downloaded 21.5 MB
+
+"
+"2","trying URL 'https://yihui.org/gh/tinytex/tools/pkgs-custom.txt'
+"
+"2","Content length 81 bytes
+"
+"2","downloaded 551 bytes
+
+"
+"2","trying URL 'https://yihui.org/gh/tinytex/tools/tinytex.profile'
+"
+"2","Content length 81 bytes
+"
+"2","downloaded 295 bytes
+
+"
+"2","Starting to install TinyTeX to C:\Users\stolte\AppData\Roaming/TinyTeX. It will take a few minutes.
+"
+"1","Automated TeX Live installation using profile: ../tinytex.profile
+"
+"1","Loading http://ctan.cs.uu.nl/systems/texlive/tlnet/tlpkg/texlive.tlpdb
+"
+"1","Installing TeX Live 2019 from: http://ctan.cs.uu.nl/systems/texlive/tlnet (not verified)
+"
+"1","Platform: win32 => 'Windows'
+"
+"1","Distribution: net  (downloading)
+"
+"1","Using URL: http://ctan.cs.uu.nl/systems/texlive/tlnet
+"
+"1","Directory for temporary files: C:\Users\stolte\AppData\Local\Temp\SKFd5rWRJm
+"
+"1","Installing to: ./TinyTeX/
+"
+"1","Installing [01/10, time/total: ??:??/??:??]: texlive.infra [219k]
+"
+"1","Installing [02/10, time/total: 00:01/01:19]: texlive.infra.win32 [1395k]
+"
+"1","Installing [03/10, time/total: 00:02/00:21]: tlperl.win32 [6960k]
+"
+"1","Installing [04/10, time/total: 00:11/00:22]: hyphen-base [22k]
+"
+"1","Installing [05/10, time/total: 00:11/00:22]: kpathsea [32k]
+"
+"1","Installing [06/10, time/total: 00:11/00:22]: kpathsea.win32 [476k]
+"
+"1","Installing [07/10, time/total: 00:12/00:22]: texlive-scripts [129k]
+"
+"1","Installing [08/10, time/total: 00:12/00:22]: texlive-scripts.win32 [36k]
+"
+"1","Installing [09/10, time/total: 00:13/00:24]: tlgs.win32 [6674k]
+"
+"1","Installing [10/10, time/total: 00:18/00:19]: tlpsv.win32 [1411k]
+"
+"1","Time used for installing the packages: 00:20
+"
+"1","running mktexlsr ./TinyTeX/texmf-dist ...
+"
+"1","mktexlsr: Updating ./TinyTeX/texmf-dist/ls-R...
+"
+"1","mktexlsr: Updated ./TinyTeX/texmf-dist/ls-R.
+"
+"1","mktexlsr: Done.
+"
+"1","writing fmtutil.cnf to ./TinyTeX/texmf-dist/web2c/fmtutil.cnf
+"
+"1","writing updmap.cfg to ./TinyTeX/texmf-dist/web2c/updmap.cfg
+"
+"1","writing language.dat to ./TinyTeX/texmf-var/tex/generic/config/language.dat
+"
+"1","writing language.def to ./TinyTeX/texmf-var/tex/generic/config/language.def
+"
+"1","writing language.dat.lua to ./TinyTeX/texmf-var/tex/generic/config/language.dat.lua
+"
+"1","running mktexlsr ./TinyTeX/texmf-var ./TinyTeX/texmf-config ./TinyTeX/texmf-dist ...
+"
+"1","mktexlsr: Updating ./TinyTeX/texmf-var/ls-R...
+"
+"1","mktexlsr: Updated ./TinyTeX/texmf-var/ls-R.
+"
+"1","Cannot open ./TinyTeX/texmf-config/ls-R to write.
+"
+"1","Cannot open ./TinyTeX/texmf-dist/ls-R to write.
+"
+"1","mktexlsr: Done.
+"
+"1","running updmap-sys --nohash ...C:\Users\stolte\AppData\Local\Temp\Rtmpc1lOXG\install-tl-20200213\install-tl: updmap-sys --nohash failed (status 53): 
+"
+"1","failed
+"
+"1","re-running mktexlsr ./TinyTeX/texmf-var ./TinyTeX/texmf-config ...
+"
+"1","mktexlsr: Updating ./TinyTeX/texmf-var/ls-R...
+"
+"1","mktexlsr: Updated ./TinyTeX/texmf-var/ls-R.
+"
+"1","Cannot open ./TinyTeX/texmf-config/ls-R to write.
+"
+"1","mktexlsr: Done.
+"
+"1","pre-generating all format files, be patient...
+"
+"1","running fmtutil-sys --no-error-if-no-engine=luahbtex,luajittex,mfluajit --no-strict --all ...C:\Users\stolte\AppData\Local\Temp\Rtmpc1lOXG\install-tl-20200213\install-tl: fmtutil-sys --no-error-if-no-engine=luahbtex,luajittex,mfluajit --no-strict --all failed (status 53): 
+"
+"1","
+"
+"1","C:\Users\stolte\AppData\Local\Temp\Rtmpc1lOXG\install-tl-20200213\install-tl: errors in installation reported above
+"
+"1","
+"
+"1","Summary of warnings:
+"
+"1","C:\Users\stolte\AppData\Local\Temp\Rtmpc1lOXG\install-tl-20200213\install-tl: updmap-sys --nohash failed (status 53): 
+"
+"1","C:\Users\stolte\AppData\Local\Temp\Rtmpc1lOXG\install-tl-20200213\install-tl: fmtutil-sys --no-error-if-no-engine=luahbtex,luajittex,mfluajit --no-strict --all failed (status 53): 
+"
+"1","
+"
+"1"," ----------------------------------------------------------------------
+"
+"1"," The following environment variables contain the string ""tex""
+"
+"1"," (case-independent).  If you're doing anything but adding personal
+"
+"1"," directories to the system paths, they may well cause trouble somewhere
+"
+"1"," while running TeX.  If you encounter problems, try unsetting them.
+"
+"1"," Please ignore spurious matches unrelated to TeX.
+"
+"1","
+"
+"1","    II=C:\Users\stolte\AppData\Roaming\TinyTeX\bin\win32
+"
+"1"," ----------------------------------------------------------------------
+"
+"1","failed
+"
+"1","running package-specific postactions
+"
+"1","finished with package-specific postactions
+"
+"1","
+"
+"1","
+"
+"1","Welcome to TeX Live!
+"
+"1","
+"
+"1","
+"
+"1","See ./TinyTeX//index.html for links to documentation.
+"
+"1","The TeX Live web site (https://tug.org/texlive/) contains any updates and
+"
+"1","corrections. TeX Live is a joint project of the TeX user groups around the
+"
+"1","world; please consider supporting it by joining the group best for you. The
+"
+"1","list of groups is available on the web at https://tug.org/usergroups.html.
+"
+"1","Logfile: ./TinyTeX/install-tl.log
+"
+"1","tlmgr.pl install: package ifluatex not present in repository.
+"
+"1","tlmgr.pl install: package ifxetex not present in repository.
+"
+"1","tlmgr.pl: package repository http://ctan.cs.uu.nl/systems/texlive/tlnet (not verified: gpg unavailable)
+"
+"1","tlmgr.pl install: package already present: texlive-scripts
+"
+"1","[1/103, ??:??/??:??] install: amscls [32k]
+"
+"1","[2/103, 00:00/00:00] install: amsfonts [3542k]
+"
+"1","[3/103, 00:04/00:38] install: amsmath [30k]
+"
+"1","[4/103, 00:05/00:47] install: atbegshi [5k]
+"
+"1","[5/103, 00:05/00:47] install: atveryend [4k]
+"
+"1","[6/103, 00:05/00:47] install: auxhook [2k]
+"
+"1","[7/103, 00:05/00:47] install: babel [150k]
+"
+"1","[8/103, 00:07/01:04] install: bibtex.win32 [41k]
+"
+"1","[9/103, 00:07/01:03] install: bibtex [15k]
+"
+"1","[10/103, 00:07/01:03] install: bigintcalc [7k]
+"
+"1","[11/103, 00:08/01:12] install: bitset [6k]
+"
+"1","[12/103, 00:08/01:11] install: booktabs [3k]
+"
+"1","[13/103, 00:08/01:11] install: caption [29k]
+"
+"1","[14/103, 00:08/01:11] install: cm [233k]
+"
+"1","[15/103, 00:09/01:15] install: dehyph [46k]
+"
+"1","[16/103, 00:09/01:14] install: dehyph-exptl [94k]
+"
+"1","[17/103, 00:10/01:21] install: dvipdfmx.win32 [315k]
+"
+"1","[18/103, 00:10/01:15] install: dvipdfmx [27k]
+"
+"1","[19/103, 00:11/01:22] install: dvips.win32 [89k]
+"
+"1","[20/103, 00:12/01:28] install: dvips [34k]
+"
+"1","[21/103, 00:12/01:28] install: ec [258k]
+"
+"1","[22/103, 00:14/01:37] install: etex [12k]
+"
+"1","[23/103, 00:15/01:44] install: etexcmds [3k]
+"
+"1","[24/103, 00:15/01:44] install: etoolbox [9k]
+"
+"1","[25/103, 00:15/01:43] install: euenc [4k]
+"
+"1","[26/103, 00:15/01:43] install: fancyvrb [12k]
+"
+"1","[27/103, 00:16/01:50] install: float [3k]
+"
+"1","[28/103, 00:16/01:50] install: fontspec [27k]
+"
+"1","[29/103, 00:17/01:56] install: framed [8k]
+"
+"1","[30/103, 00:17/01:56] install: geometry [9k]
+"
+"1","[31/103, 00:17/01:56] install: gettitlestring [3k]
+"
+"1","[32/103, 00:18/02:03] install: glyphlist [25k]
+"
+"1","[33/103, 00:18/02:02] install: graphics [15k]
+"
+"1","[34/103, 00:18/02:02] install: graphics-cfg [2k]
+"
+"1","[35/103, 00:19/02:08] install: graphics-def [10k]
+"
+"1","[36/103, 00:19/02:08] install: grfext [3k]
+"
+"1","[37/103, 00:19/02:08] install: grffile [4k]
+"
+"1","[38/103, 00:20/02:15] install: gsftopk.win32 [13k]
+"
+"1","[39/103, 00:20/02:15] install: gsftopk [4k]
+"
+"1","[40/103, 00:20/02:14] install: helvetic [527k]
+"
+"1","[41/103, 00:22/02:14] install: hycolor [4k]
+"
+"1","[42/103, 00:22/02:14] install: hyperref [96k]
+"
+"1","[43/103, 00:23/02:18] install: hyph-utf8 [16k]
+"
+"1","[44/103, 00:23/02:17] install: iftex [4k]
+"
+"1","[45/103, 00:24/02:23] install: inconsolata [293k]
+"
+"1","[46/103, 00:25/02:22] install: infwarerr [3k]
+"
+"1","[47/103, 00:25/02:22] install: intcalc [6k]
+"
+"1","[48/103, 00:25/02:22] install: knuth-lib [30k]
+"
+"1","[49/103, 00:25/02:21] install: kvdefinekeys [3k]
+"
+"1","[50/103, 00:26/02:27] install: kvoptions [7k]
+"
+"1","[51/103, 00:26/02:27] install: kvsetkeys [4k]
+"
+"1","[52/103, 00:26/02:26] install: l3backend [12k]
+"
+"1","[53/103, 00:26/02:26] install: l3kernel [146k]
+"
+"1","[54/103, 00:28/02:34] install: l3packages [20k]
+"
+"1","[55/103, 00:28/02:33] install: latex [165k]
+"
+"1","[56/103, 00:29/02:35] install: latex-bin.win32 [1k]
+"
+"1","[57/103, 00:29/02:35] install: latex-bin [1k]
+"
+"1","[58/103, 00:29/02:35] install: latex-fonts [18k]
+"
+"1","Can't make file C:/Users/stolte/AppData/Roaming/TinyTeX/texmf-dist/tlpkg/tlpobj/latex-fonts.tlpobj writeable: Permission denied at C:/Users/stolte/AppData/Roaming/TinyTeX/tlpkg/TeXLive/TLUtils.pm line 1079.
+"
+"1","Can't unlink file C:/Users/stolte/AppData/Roaming/TinyTeX/texmf-dist/tlpkg/tlpobj/latex-fonts.tlpobj: No such file or directory at C:/Users/stolte/AppData/Roaming/TinyTeX/tlpkg/TeXLive/TLUtils.pm line 1086.
+"
+"1","and can't restore permissions to 0666
+"
+"1","Can't remove directory C:/Users/stolte/AppData/Roaming/TinyTeX/texmf-dist/tlpkg/tlpobj: Directory not empty at C:/Users/stolte/AppData/Roaming/TinyTeX/tlpkg/TeXLive/TLUtils.pm line 1066.
+"
+"1","[59/103, 00:30/02:40] install: latexconfig [4k]
+"
+"1","[60/103, 00:30/02:40] install: latexmk.win32 [1k]
+"
+"1","[61/103, 00:30/02:40] install: latexmk [91k]
+"
+"1","[62/103, 00:30/02:37] install: letltxmacro [3k]
+"
+"1","[63/103, 00:31/02:42] install: lm [11665k]
+"
+"1","[64/103, 00:39/01:13] install: ltxcmds [5k]
+"
+"1","[65/103, 00:39/01:13] install: lualibs [119k]
+"
+"1","[66/103, 00:39/01:13] install: luaotfload.win32 [1k]
+"
+"1","[67/103, 00:39/01:13] install: luaotfload [567k]
+"
+"1","[68/103, 00:40/01:12] install: luatex.win32 [1772k]
+"
+"1","[69/103, 00:42/01:09] install: luatex [13k]
+"
+"1","[70/103, 00:42/01:09] install: makeindex.win32 [18k]
+"
+"1","[71/103, 00:43/01:11] install: makeindex [5k]
+"
+"1","[72/103, 00:43/01:11] install: mathspec [10k]
+"
+"1","[73/103, 00:43/01:11] install: metafont.win32 [140k]
+"
+"1","[74/103, 00:44/01:12] install: metafont [9k]
+"
+"1","[75/103, 00:45/01:14] install: mfware.win32 [58k]
+"
+"1","[76/103, 00:45/01:14] install: mfware [4k]
+"
+"1","[77/103, 00:45/01:14] install: modes [27k]
+"
+"1","[78/103, 00:45/01:13] install: natbib [17k]
+"
+"1","[79/103, 00:45/01:13] install: oberdiek [47k]
+"
+"1","[80/103, 00:46/01:15] install: pdfescape [5k]
+"
+"1","[81/103, 00:46/01:15] install: pdftex.win32 [690k]
+"
+"1","[82/103, 00:47/01:14] install: pdftex [37k]
+"
+"1","[83/103, 00:47/01:14] install: pdftexcmds [7k]
+"
+"1","[84/103, 00:48/01:16] install: plain [70k]
+"
+"1","[85/103, 00:48/01:15] install: refcount [3k]
+"
+"1","[86/103, 00:49/01:17] install: rerunfilecheck [4k]
+"
+"1","[87/103, 00:49/01:17] install: stringenc [23k]
+"
+"1","[88/103, 00:49/01:17] install: tex.win32 [130k]
+"
+"1","[89/103, 00:49/01:16] install: tex [1k]
+"
+"1","[90/103, 00:50/01:18] install: tex-ini-files [4k]
+"
+"1","[91/103, 00:50/01:18] install: times [281k]
+"
+"1","[92/103, 00:51/01:18] install: tipa [2809k]
+"
+"1","[93/103, 00:54/01:14] install: tools [41k]
+"
+"1","[94/103, 00:54/01:14] install: unicode-data [263k]
+"
+"1","[95/103, 00:55/01:14] install: uniquecounter [3k]
+"
+"1","[96/103, 00:55/01:14] install: upquote [2k]
+"
+"1","[97/103, 00:55/01:14] install: url [6k]
+"
+"1","[98/103, 00:56/01:15] install: xetex.win32 [8975k]
+"
+"1","[99/103, 01:03/01:03] install: xetex [7k]
+"
+"1","3 File(s) copied
+"
+"1","1 File(s) copied
+"
+"1","Running fc-cache -v -r
+"
+"1","[100/103, 01:19/01:19] install: xetexconfig [1k]
+"
+"1","[101/103, 01:19/01:19] install: xkeyval [13k]
+"
+"1","[102/103, 01:20/01:20] install: xunicode [26k]
+"
+"1","[103/103, 01:20/01:20] install: zapfding [46k]
+"
+"1","tlmgr.pl: action install returned an error; continuing.
+"
+"1","running mktexlsr ...
+"
+"1","done running mktexlsr.
+"
+"1","running updmap-sys ...
+"
+"1","done running updmap-sys.
+"
+"1","regenerating language.dat
+"
+"1","regenerating language.def
+"
+"1","regenerating language.dat.lua
+"
+"1","regenerating fmtutil.cnf in C:/Users/stolte/AppData/Roaming/TinyTeX/texmf-dist
+"
+"1","running fmtutil-sys --no-error-if-no-engine=luahbtex,luajittex,mfluajit --no-error-if-no-format --byengine xetex ...
+"
+"1","done running fmtutil-sys --no-error-if-no-engine=luahbtex,luajittex,mfluajit --no-error-if-no-format --byengine xetex.
+"
+"1","running fmtutil-sys --no-error-if-no-engine=luahbtex,luajittex,mfluajit --no-error-if-no-format --byengine luatex ...
+"
+"1","done running fmtutil-sys --no-error-if-no-engine=luahbtex,luajittex,mfluajit --no-error-if-no-format --byengine luatex.
+"
+"1","running fmtutil-sys --no-error-if-no-engine=luahbtex,luajittex,mfluajit --no-error-if-no-format --byengine pdftex ...
+"
+"1","done running fmtutil-sys --no-error-if-no-engine=luahbtex,luajittex,mfluajit --no-error-if-no-format --byengine pdftex.
+"
+"1","running fmtutil-sys --no-error-if-no-engine=luahbtex,luajittex,mfluajit --no-error-if-no-format --byengine tex ...
+"
+"1","done running fmtutil-sys --no-error-if-no-engine=luahbtex,luajittex,mfluajit --no-error-if-no-format --byengine tex.
+"
+"1","running fmtutil-sys --no-error-if-no-engine=luahbtex,luajittex,mfluajit --byfmt mf ...
+"
+"1","done running fmtutil-sys --no-error-if-no-engine=luahbtex,luajittex,mfluajit --byfmt mf.
+"
+"1","running fmtutil-sys --no-error-if-no-engine=luahbtex,luajittex,mfluajit --byhyphen ""language.dat"" ...
+"
+"1","done running fmtutil-sys --no-error-if-no-engine=luahbtex,luajittex,mfluajit --byhyphen ""language.dat"".
+"
+"1","running fmtutil-sys --no-error-if-no-engine=luahbtex,luajittex,mfluajit --byhyphen ""language.def"" ...
+"
+"1","done running fmtutil-sys --no-error-if-no-engine=luahbtex,luajittex,mfluajit --byhyphen ""language.def"".
+"
+"1","running fmtutil-sys --no-error-if-no-engine=luahbtex,luajittex,mfluajit --byhyphen ""language.dat.lua"" ...
+"
+"1","tlmgr.pl: An error has occurred. See above messages. Exiting.
+"
+"1","done running fmtutil-sys --no-error-if-no-engine=luahbtex,luajittex,mfluajit --byhyphen ""language.dat.lua"".
+"
+"1","tlmgr.pl: package log updated: C:/Users/stolte/AppData/Roaming/TinyTeX/texmf-var/web2c/tlmgr.log
+"
+"1","Use of uninitialized value in bitwise or (|) at C:\Users\stolte\AppData\Roaming\TinyTeX\texmf-dist\scripts\texlive\tlmgr.pl line 1485.
+"
+"2","TinyTeX installed to C:\Users\stolte\AppData\Roaming/TinyTeX
+"
+"2","Please quit and reopen your R session and IDE (if you are using one, such as RStudio or Emacs) and check if tinytex:::is_tinytex() is TRUE.
+"

@@ -1,0 +1,88 @@
+---
+title: "Using Rmarkdown for reproducible reporting"
+author: "Deltares"
+date: '`r Sys.Date()`'
+output:
+  bookdown::gitbook:
+    bookdown::gitbook:
+      config:
+        toc:
+          collapse: subsection
+          scroll_highlight: yes
+          before: null
+          after: null
+        toolbar:
+          position: fixed
+        edit : null
+        download: null
+        search: yes
+        fontsettings:
+          theme: white
+          family: serif
+          size: 2
+        sharing:
+          facebook: yes
+          github: no
+          twitter: yes
+          linkedin: no
+          weibo: no
+          instapaper: no
+          vk: no
+          all: ['facebook', 'twitter', 'linkedin', 'weibo', 'instapaper']
+        info: yes
+bibliography: ["bibliography/MyModifiedBibliography.bib"]
+link-citations: yes
+biblio-style: "apalike"
+subtitle: update2020
+---
+
+```{r, message=FALSE, warning=FALSE, include=FALSE}
+# set chunk options for this Rmd file
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE,
+	cache = TRUE
+)
+
+
+```
+
+
+
+
+# Introduction
+
+Rmarkdown is an R package and a tool for reproducible reporting [@doi:10.1002/wics.1348]. 
+
+
+
+##  First section
+
+When you include figures, and when you want to refer to them, it is important to:
+
+*	add a unique label just after the engine label (r in this case).
+*	specify the size of the figure as fig.width and/or fig.height in the code block specification which is the text between curly brackets {}.
+*	add the resolution with which the figure needs to be rendered.
+*	add a figure caption as quoted text in the code block specification.
+
+```{r firstFigureLabel, fig.height=2, fig.width=3, fig.margin = TRUE, fig.cap = "First figure"}
+knitr::include_graphics("www/logo.png", dpi = 92)
+```
+
+Rmarkdown supports Latex style equations
+
+$$   \begin{pmatrix} 
+   a_{11} & a_{12} & a_{13}  \\
+   a_{21} & a_{22} & a_{23}  \\
+   a_{31} & a_{32} & a_{33}  \\
+   \end{pmatrix} 
+   $$
+
+or separate line or inline $a_1^2+b_1^2=c_1^2$  $L^AT_EX$ syle equations.
+
+
+
+
+
+

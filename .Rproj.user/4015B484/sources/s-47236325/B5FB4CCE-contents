@@ -1,0 +1,202 @@
+---
+title: "Reproducible reporting in R"
+author: "Willem Stolte"
+date: "March 01, 2016"
+output: 
+  ioslides_presentation:
+    css: www/DeltaresStyle.css
+  slidy_presentation:
+    font_adjustment: 0
+    css: www/DeltaresStyle.css
+---
+
+```{r load_packages, include = FALSE}
+knitr::opts_chunk$set(
+  echo=FALSE, message=FALSE, warning=FALSE
+)
+require(sf)
+require(leaflet)
+```
+
+# Overview
+
+* Reproducible reporting
+* Working in Rstudio projects
+* Introduction to Rmarkdown
+* Bookdown extension
+
+# OpenEarth data management
+
+* Data, Models, Tools
+* Generic workflow and conventions
+    + Version control of data and tools
+    + Traceable and reproducible
+    + Use available open technical and semantic standards
+    + Open Source software
+
+# Reproducible data products
+
+![](www/OpenEarth.png)
+
+# Extend to documents
+
+* Open source
+* Reproducible 
+    + Jupyter notebooks offline/online
+    + Rmarkdown reproducible reports
+    + Rshiny interactive web applications
+
+
+# Housekeeping
+
+Open source IDE - Rstudio desktop and Rstudio server
+
+Work in PROJECTS
+
+## Rstudio templates
+
+```{r, out.width = "60%"}
+knitr::include_graphics("www/templates.png")
+```
+
+## Version control in Rstudio
+
+```{r, out.width = "60%"}
+knitr::include_graphics("www/versionControl.png")
+```
+
+## Help functions and cheatsheets
+
+Help (F1)
+
+Cheatsheets
+
+```{r, out.width = "60%"}
+knitr::include_graphics("www/cheatSheets.png")
+```
+
+# Rmarkdown
+
+```{r, out.width = "100%"}
+knitr::include_graphics("www/RmarkdownComponents.png")
+```
+
+# Knitr
+
+* R package
+* Dynamic report generation
+* Integration of (evaluated) code into documents
+
+[Home of knitr](https://yihui.org/knitr/)
+
+
+# pandoc
+
+* Document converter
+* "Markup format" converter
+* Pandoc markdown as intermediate
+
+[Home of pandoc](https://pandoc.org/)
+
+
+# Markdown
+
+```{r, out.width = "100%"}
+knitr::include_graphics("www/markdown.png")
+```
+
+
+
+# R markdown
+
+Filetype which combines R code chunks with markdown text (*.Rmd)
+
+
+R Package using 
+
+* knitr
+* markdown
+* pandoc
+* Combines code with markdown for use with Pandoc
+
+[The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+
+
+# Knit to html
+
+Interactive graphics e.g.
+
+- leaflet maps
+- plotly objects
+- dygraph objects for time series
+
+styling with html or separate css
+
+[more details](https://bookdown.org/yihui/rmarkdown/html-document.html)
+
+# Knit to pdf
+
+Latex needed
+
+* Miktex works well
+* TinyTex (R package for easy install of light version for use with Rmarkdown
+
+Latex templates
+
+
+# Knit to MS-Word
+
+* Not recommended as final product (not reproducible because it can be edited afterwards).
+
+*.doc(x) as style templates
+
+
+# R markdown files
+
+YAML header
+
+
+
+
+
+
+# In-line code in markdown document
+
+Or run inline code to calculate that the average speed = `r mean(cars$speed)` .
+
+in Rmarkdown:
+
+Or run inline code to calculate that the average speed = \`r_ mean(cars$speed) \` .
+
+
+
+# example WFS
+
+
+[What is WFS en how to?](https://publicwiki.deltares.nl/display/OET/WFS+primer)  
+First look what is in the wfs (can also interactively be done in QGIS)
+
+
+## Connect to WFS
+
+Read WFS layer and plot in leaflet map
+The data that are used here are pelagic fish data from the MEP-NSW ecological monitoring. 
+
+```{r, out.width = "70%", fig.cap = "Map of pelagic fish haul locations (only first 50 records)"}
+
+url3 <- "http://marineprojects.openearth.nl/geoserver/mep-nsw/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=mep-nsw:mep-nsw_pvis&maxFeatures=50&outputFormat=application%2Fjson"
+
+# read using sf (simple features) package
+pvis <- sf::read_sf(url3)
+
+leaflet(data = pvis) %>%
+  addTiles(group = "OSM") %>%
+  addProviderTiles(providers$Esri.WorldImagery, group = "EsriWorldImagery") %>%
+  addProviderTiles("OpenSeaMap", group = "OpenSeaMap") %>%
+  addCircleMarkers(label = ~as.character(Metingomschrijving), group = "hauls") %>%
+  leaflet::addLayersControl(
+    baseGroups = c("OSM", "EsriWorldImagery"), 
+    overlayGroups = c("OpenSeaMap", "hauls"))
+
+```
+

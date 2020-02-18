@@ -1,0 +1,42 @@
+# Using Deltares Latex template
+
+The following notes is my personal method. I am aware that there are different Latex distributions. If you have already installed a Latex distribution, please  be aware that the installation guidelines below may interfere with your current Latex, and it may break some functionality. 
+
+I use Tinytex installation, which can be done from within R. 
+For more information see: https://yihui.org/tinytex/
+
+```{r eval=FALSE, include=FALSE}
+install.packages('tinytex')
+tinytex::install_tinytex()
+# to uninstall TinyTeX, run tinytex::uninstall_tinytex() 
+```
+
+To install the Deltares Latex template files see 
+files in Jan Mooimans Bulletin (n:\Deltabox\Bulletin\mooiman\installation_latex\)
+
+Put all Deltares template files in appropriate place
+
+Then update tinytex
+
+```{r eval=FALSE, include=FALSE}
+tinytex::tlmgr_update()
+tinytex::use_tinytex()
+# then restart R and Rstudio (you may have to close all instances of R/Rstudio)
+# check if path is correct:
+tinytex::tinytex_root() 
+```
+
+Put file 'deltares-report-template.tex' in project folder. 
+
+Add 
+\def\tightlist{}
+to the template (top of document)
+
+To render to Deltares report use 
+
+```{r, eval=FALSE, include=FALSE}
+bookdown::render_book("index.Rmd", output_format = bookdown::pdf_book(template = "deltares-report-template.tex"), new_session = T, clean_envir = T)
+```
+
+
+

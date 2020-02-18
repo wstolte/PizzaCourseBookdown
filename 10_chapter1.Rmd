@@ -1,0 +1,12 @@
+# Chapter 1    {#labelChapter01}
+
+
+## Project structure
+
+This chapter starts with a [link to how to organize your project](https://bookdown.org/yihui/rmarkdown/bookdown-project.html) when you want to start writing a document using bookdown.
+
+Other links that are important for reading later if you want to use bookdown for serious purposes are:
+
+*	[Yihui Xie, J. J. Allaire, Garrett Grolemund. R Markdown: The Definitive Guide, 2019-12-02](https://bookdown.org/yihui/rmarkdown/)
+*	(Pandoc user's guide - pandoc is the engine behind Rmarkdown for the conversion of markdown to LaTeX, pdf, Word, HTML etc.)[https://pandoc.org/MANUAL.html]
+

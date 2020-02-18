@@ -1,0 +1,8 @@
+"0","koloniebroedvogels %>% group_by(jaar, soort) %>%"
+"0","  summarise(sum = sum(n), meanColonySize = mean(n)) %>%"
+"0","  ggplot(aes(jaar, sum)) +"
+"0","  geom_line() +"
+"0","  geom_point(aes(size = meanColonySize), shape = 21, fill = ""white"") + "
+"0","  facet_grid(. ~ soort, scales = ""free"") +"
+"0","  theme_minimal() +"
+"0","  theme(legend.position = ""bottom"")"

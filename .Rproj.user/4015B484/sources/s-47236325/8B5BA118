@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1579181395226.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "8B5BA118",
+    "lastKnownWriteTime" : 1581795267,
+    "last_content_update" : 1581795267027,
+    "path" : "D:/GitHub_working_copies/PizzaCourseBookdown/_render_book.R",
+    "project_path" : "_render_book.R",
+    "properties" : {
+        "cursorPosition" : "18,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
