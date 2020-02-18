@@ -1,61 +1,73 @@
-
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Use of python as engine
-
-
 In Rmarkdown, different engines can be used (). To combine Python and R scripts, the R package reticulate will do the hard work to enable interoperability of R an Python code chunks in your Rmarkdown document (https://rstudio.github.io/reticulate/articles/r_markdown.html).
 
-Start a document with an R code block like this:
-
-```{r setup, include=TRUE, eval=FALSE}
-knitr::opts_chunk$set()
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# This is the library that takes care of R/Python integration
 library(reticulate)
-reticulate::py_versions_windows()
-use_python('C:/Users/stolte/AppData/Local/Continuum/anaconda3')
-reticulate::py_available(TRUE)
-scipy <- import("scipy")
-
+reticulate::use_python("c:/Users/stolte/AppData/Local/Continuum/anaconda3/python.exe")
+reticulate::py_available()
+# use_condaenv("base")
+# reticulate::conda_create("matplotlib")
+reticulate::conda_install(packages = "matplotlib")
+# In Python you typically use a virtual environment
+# use_virtualenv("main")
 ```
 
 
-A chunk with python code:
+Install python packages if necessary. see also https://rstudio.github.io/reticulate/articles/python_packages.html for installation from within R.
 
-```{python testPlot, fig.cap = "Testplot for python matplotlib plotting."}
 
-import matplotlib.pyplot as plt
+## Python Markdown
+This is an example of how to include python in a markdown document. 
+
+
+```{python}
+import pandas as pd
 import numpy as np
-t = np.arange(0.0, 2.0, 0.01)
-s = 1 + np.sin(2*np.pi*t)
 
-plt.plot(t,s)
-plt.xlabel('time (s)')
-plt.ylabel('voltage (mV)')
-plt.grid(True)
-plt.savefig("test.png")
-plt.show()
-
+x = np.arange(10)
+y = x**2
+df = pd.DataFrame(data=dict(x=x, y=y))
+df.plot('x',  'y')
 ```
 
 
-Note. 
+## Using python in R Markdown
 
-The python code runs fine in console and in Rmarkdown compilaion in editor. It does not yet work to render the document. 
-https://github.com/rstudio/rstudio/issues/4182
-However, this will aparenlty be solved pretty soon. 
-
-
-Je kunt nu ook de python objecten in R gebruiken
+We can  even switch back and forth to to R. Let's call the `summary` function, for which there is no python equivalent. 
 
 ```{r}
-# volgens mij moet je eerst een pandas dataframe maken van vectoren t en s
-# dus: maak pandas df met t = t en s = s (ik ben daar niet zo handig in)
-
+summary(py$df)
 ```
 
+## Including R plots based on python data.
 
+We can also use the `ggplot2` package,  which provides an elegant interface. It is based on the "grammar of graphics". 
 
-```{r}
+```{r, echo=FALSE}
 library(ggplot2)
-# ggplot(df, aes(t,s)) + geom_path() # zou dan moeten werken
+ggplot(py$df,  aes(x, y)) + geom_point()
 ```
 
+## Back to python
+We can load a dataset in R using the data function. Let's take the `cars` example dataset.
+```{r cars}
+summary(cars)
+help(cars)
+```
 
+Now we can plot the same variable  in python.
+```{python}
+import matplotlib.pyplot as plt
+(fig, ax) = plt.subplots()
+r.cars.plot('speed', 'dist', ax=ax)
+ax.set_xlabel('Speed [mph]')
+ax.set_ylabel('Stopping distance [ft]')
+```
+ 
